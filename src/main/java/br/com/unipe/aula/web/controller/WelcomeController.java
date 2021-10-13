@@ -14,11 +14,11 @@ import br.com.unipe.aula.model.Torcedor;
 @Controller
 public class WelcomeController {
 	
-	@RequestMapping(value="/welcome", method=RequestMethod.GET)
-	public String boasVindas() {
-		//Repasse de parâmetros para uma view
-			return "welcome";
-	}
+//	@RequestMapping(value="/welcome", method=RequestMethod.GET)
+//	public String boasVindas() {
+//		//Repasse de parâmetros para uma view
+//			return "welcome";
+//	}
 	
 	@RequestMapping(value="/welcome", method=RequestMethod.GET)
 	public ModelAndView outraforma() {
@@ -32,7 +32,7 @@ public class WelcomeController {
 	}
 	@RequestMapping(value="/formulario", method=RequestMethod.GET)
 	public ModelAndView apresentaFormulario(Model model) {
-		model.addAtribute("torcedor", new Torcedor());
+		model.addAttribute("torcedor", new Torcedor());
 			return new ModelAndView("formulario");
 	}
 	
@@ -41,7 +41,7 @@ public class WelcomeController {
 		//Repasse de parâmetros para uma view
 		ModelAndView view = new ModelAndView("formulario");
 		
-		String texto=nome + " torce para o " + time;
+		//String texto=nome + " torce para o " + time;
 		
 		//1º parâmetro - string que representa o nome do objeto a ser enviado para a view
 		view.addObject("mensagem", "acorda");
